@@ -35,9 +35,9 @@ function writePassword() {
                 // Upper case prompt
                 upperCasePrompt = window.confirm("Do you want upper case letters");
                 if (upperCasePrompt === true) {
-                    alert("using upper Case")
+                    alert("using upper Case");
                 } else {
-                    alert("not using upper case letters")
+                    alert("not using upper case letters");
                     var upperCasePrompt = false;
                 }
             } else {
@@ -46,9 +46,9 @@ function writePassword() {
                 // Upper case prompt
                 upperCasePrompt = window.confirm("Do you want upper case letters");
                 if (upperCasePrompt === true) {
-                    alert("using upper Case")
-                } else {
-                    alert("not using upper case letters")
+                    alert("using upper Case");
+                } else {;
+                    alert("not using upper case letters");
                     var upperCasePrompt = false;
                 }
             }
