@@ -6,20 +6,38 @@ var generateBtn = document.querySelector("#generate");
 // Lower case prompt
 var lowerCasePrompts = function lowerCasePromptsFunction() {
 
-        var lowerCasePrompt = window.confirm("do you want lowercase letters?");
-        if (lowerCasePrompt === true) {
+        var lowerCasePromptAnswer = window.confirm("do you want lowercase letters?");
+        if (lowerCasePromptAnswer === true) {
             alert("Using lower case letters in password");
-            var lowerCaseStatus = true;
 
         } else {
             alert("Not using lower case letters");
-            lowerCaseStatus = false;
-
-
 
         }
     }
-    //Create Array with Special Characters
+    // Upper case prompt
+
+// var upperCasePrompts = function upperCasePromptsFunction() {
+//         var upperCasePromptsAnswer = window.confirm("do you want lowercase letters?");
+//         if (upperCasePromptsAnswer === true) {
+//             alert("Using lower case letters in password");
+
+
+//         } else {
+//             alert("Not using lower case letters");
+//         }
+//     }
+// var numericalPrompts = function numericalPromptsFunction() {
+//     var numericalPromptsAnswer = window.confirm("do you want lowercase letters?");
+//     if (numericalPromptsAnswer === true) {
+//         alert("Using lower case letters in password");
+//     } else {
+//         alert("Not using lower case letters");
+
+//     }
+// }
+
+//Create Array with Special Characters
 var specialCharactersArray = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "\\", "-", "=", "[", "]", "{", "}", ";", "'", ":",
     '/', "\U0022", " | ", " /U0027 ", "/U0027",
     ", ", "<", ">", "?", "~", "]", ";"
