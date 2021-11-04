@@ -17,22 +17,22 @@ var lowerCasePrompts = function lowerCasePromptsFunction() {
     }
     // Upper case prompt
 
-// var upperCasePrompts = function upperCasePromptsFunction() {
-//         var upperCasePromptsAnswer = window.confirm("do you want lowercase letters?");
-//         if (upperCasePromptsAnswer === true) {
-//             alert("Using lower case letters in password");
+var upperCasePrompts = function upperCasePromptsFunction() {
+        var upperCasePromptsAnswer = window.confirm("do you want lowercase letters?");
+        if (upperCasePromptsAnswer === true) {
+            alert("Using lower case letters in password");
 
 
-//         } else {
-//             alert("Not using lower case letters");
-//         }
-//     }
-// var numericalPrompts = function numericalPromptsFunction() {
-//     var numericalPromptsAnswer = window.confirm("do you want lowercase letters?");
-//     if (numericalPromptsAnswer === true) {
-//         alert("Using lower case letters in password");
-//     } else {
-//         alert("Not using lower case letters");
+        } else {
+            alert("Not using lower case letters");
+        }
+    }
+    // var numericalPrompts = function numericalPromptsFunction() {
+    //     var numericalPromptsAnswer = window.confirm("do you want lowercase letters?");
+    //     if (numericalPromptsAnswer === true) {
+    //         alert("Using lower case letters in password");
+    //     } else {
+    //         alert("Not using lower case letters");
 
 //     }
 // }
