@@ -3,7 +3,8 @@ alert("Click Generate Password To Generate Password")
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-var lowerCasePrompts = function promptsFunction() {
+// Lower case prompt
+var lowerCasePrompts = function lowerCasePromptsFunction() {
 
         var lowerCasePrompt = window.confirm("do you want lowercase letters?");
         if (lowerCasePrompt === true) {
