@@ -20,22 +20,24 @@ var lowerCasePrompts = function lowerCasePromptsFunction() {
 var upperCasePrompts = function upperCasePromptsFunction() {
         var upperCasePromptsAnswer = window.confirm("do you want lowercase letters?");
         if (upperCasePromptsAnswer === true) {
-            alert("Using lower case letters in password");
+            alert("Using upper case letters in password");
 
 
         } else {
-            alert("Not using lower case letters");
+            alert("Not using upper case letters");
         }
     }
-    // var numericalPrompts = function numericalPromptsFunction() {
-    //     var numericalPromptsAnswer = window.confirm("do you want lowercase letters?");
-    //     if (numericalPromptsAnswer === true) {
-    //         alert("Using lower case letters in password");
-    //     } else {
-    //         alert("Not using lower case letters");
+    // Numerical Prompts
+var numericalPrompts = function numericalPromptsFunction() {
+    var numericalPromptsAnswer = window.confirm("do you want lowercase letters?");
+    if (numericalPromptsAnswer === true) {
+        alert("Using numbers in password");
+    } else {
+        alert("Not using numbers in password");
 
-//     }
-// }
+    }
+}
+
 
 //Create Array with Special Characters
 var specialCharactersArray = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "\\", "-", "=", "[", "]", "{", "}", ";", "'", ":",
