@@ -47,7 +47,7 @@ var specialCharsPrompts = function specialCharsPromptsFunction() {
 
     }
 }
-var specialCharsPrompts = function numericalPromptsFunction() {
+var specialCharsPrompts = function specialCharsPromptsFunction() {
     var specialCharsPromptsAnswer = window.confirm("do you want Special Characters?");
     if (specialCharsPromptsAnswer === true) {
         alert("Using special chars in password");
@@ -55,13 +55,19 @@ var specialCharsPrompts = function numericalPromptsFunction() {
         alert("Not using special chars in password");
 
         <<
-        << << < HEAD
+        <<
+        <<
+        <
+        HEAD
     }
 }
 
 ===
-=== = >>>
->>> > develop
+===
+= >>>
+>>>
+>
+develop
 //Create Array with Special Characters
 var specialCharactersArray = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "\\", "-", "=", "[", "]", "{", "}", ";", "'", ":",
     '/', "\U0022", " | ", " /U0027 ", "/U0027",
