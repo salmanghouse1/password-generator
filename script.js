@@ -18,7 +18,7 @@ var lowerCasePrompts = function lowerCasePromptsFunction() {
     // Upper case prompt
 
 var upperCasePrompts = function upperCasePromptsFunction() {
-        var upperCasePromptsAnswer = window.confirm("do you want lowercase letters?");
+        var upperCasePromptsAnswer = window.confirm("do you want uppercase letters?");
         if (upperCasePromptsAnswer === true) {
             alert("Using upper case letters in password");
 
@@ -29,15 +29,24 @@ var upperCasePrompts = function upperCasePromptsFunction() {
     }
     // Numerical Prompts
 var numericalPrompts = function numericalPromptsFunction() {
-    var numericalPromptsAnswer = window.confirm("do you want lowercase letters?");
-    if (numericalPromptsAnswer === true) {
-        alert("Using numbers in password");
+        var numericalPromptsAnswer = window.confirm("do you want numerical values?");
+        if (numericalPromptsAnswer === true) {
+            alert("Using numbers in password");
+        } else {
+            alert("Not using numbers in password");
+
+        }
+    }
+    // fixed funcion special chars function expression
+var specialCharsPrompts = function specialCharsPromptsFunction() {
+    var specialCharsPromptsAnswer = window.confirm("do you want Special Characters?");
+    if (specialCharsPromptsAnswer === true) {
+        alert("Using special chars in password");
     } else {
-        alert("Not using numbers in password");
+        alert("Not using special chars in password");
 
     }
 }
-
 
 //Create Array with Special Characters
 var specialCharactersArray = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "\\", "-", "=", "[", "]", "{", "}", ";", "'", ":",
