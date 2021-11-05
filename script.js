@@ -48,27 +48,15 @@ var specialCharsPrompts = function specialCharsPromptsFunction() {
     }
 }
 var specialCharsPrompts = function specialCharsPromptsFunction() {
-    var specialCharsPromptsAnswer = window.confirm("do you want Special Characters?");
-    if (specialCharsPromptsAnswer === true) {
-        alert("Using special chars in password");
-    } else {
-        alert("Not using special chars in password");
+        var specialCharsPromptsAnswer = window.confirm("do you want Special Characters?");
+        if (specialCharsPromptsAnswer === true) {
+            alert("Using special chars in password");
+        } else {
+            alert("Not using special chars in password");
 
-        <<
-        <<
-        <<
-        <
-        HEAD
+        }
     }
-}
-
-===
-===
-= >>>
->>>
->
-develop
-//Create Array with Special Characters
+    //Create Array with Special Characters
 var specialCharactersArray = ["`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "\\", "-", "=", "[", "]", "{", "}", ";", "'", ":",
     '/', "\U0022", " | ", " /U0027 ", "/U0027",
     ", ", "<", ">", "?", "~", "]", ";"
