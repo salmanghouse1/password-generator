@@ -125,9 +125,11 @@ var lowerCasePrompts = function lowerCasePromptsFunction() {
         if (lowerCasePromptsAnswer === true) {
             alert("Using lower case letters in password");
             answers.push(lowerCasePromptsAnswer.toString());
+
         } else {
             alert("Not using lower case letters");
             answers.push(lowerCasePromptsAnswer.toString());
+
         }
     }
     // Upper case prompt
@@ -151,9 +153,11 @@ var numericalPrompts = function numericalPromptsFunction() {
         if (numericalPromptsAnswer === true) {
             alert("Using numbers in password");
             answers.push(numericalPromptsAnswer.toString());
+
         } else {
             alert("Not using numbers in password");
             answers.push(numericalPromptsAnswer.toString());
+
         }
     }
     // fixed funcion special chars function expression
@@ -162,9 +166,11 @@ var specialCharsPrompts = function specialCharsPromptsFunction() {
     if (specialCharsPromptsAnswer === true) {
         alert("Using special chars in password");
         answers.push(specialCharsPromptsAnswer.toString());
+
     } else {
         alert("Not using special chars in password");
         answers.push(specialCharsPromptsAnswer.toString());
+
     }
 }
 
@@ -172,7 +178,7 @@ var specialCharsPrompts = function specialCharsPromptsFunction() {
 
 
 // Write password to the #password input
-const writePassword = function writePassword() {
+var writePassword = function writePasswordFunction() {
 
     answers = [];
     // Enter the program
@@ -180,7 +186,7 @@ const writePassword = function writePassword() {
     // If you want to start this program
     if (firstPrompt === true) {
         var lengthOfPasswordPrompt = window.prompt("What length do you want the password to be 8-128 chars");
-        let password = ';'
+        let password = '';
         if (lengthOfPasswordPrompt >= 8 && lengthOfPasswordPrompt <= 128) {
             alert("Password will be " + lengthOfPasswordPrompt + " characters long");
             // Lower case letters prompt
@@ -188,28 +194,38 @@ const writePassword = function writePassword() {
             upperCasePrompts();
             numericalPrompts();
             specialCharsPrompts();
-            password = determinePassword(lengthOfPasswordPrompt);
-            console.log("Password is" + password);
-            var passwordText = document.querySelector("#password");
 
-            passwordText.value = password;
+            if (answers.every(val => val === "false")) {
+                console.log("a")
+                writePassword();
+            } else {
+                password = determinePassword(lengthOfPasswordPrompt);
+                console.log("Password is" + password);
+                var passwordText = document.querySelector("#password");
+
+                passwordText.value = password;
+            }
         } else {
             while (lengthOfPasswordPrompt < 8 || lengthOfPasswordPrompt > 128 || isNaN(lengthOfPasswordPrompt) || lengthOfPasswordPrompt === "") {
                 alert("Not A Number Please enter a Number or the password is out of the range 8-128");
                 var lengthOfPasswordPrompt = window.prompt("What length do you want the password to be 8-128 chars");
             }
             alert("Ok Great Moving On...");
-            // Lower Case Prompt
             lowerCasePrompts();
             upperCasePrompts();
             numericalPrompts();
             specialCharsPrompts();
-            password = determinePassword(lengthOfPasswordPrompt);
-            console.log("Password is" + password);
-            var passwordText = document.querySelector("#password");
+            if (answers.every(val => val === "false")) {
+                writePassword();
+            } else {
+                password = determinePassword(lengthOfPasswordPrompt);
+                console.log("Password is" + password);
+                var passwordText = document.querySelector("#password");
+                passwordText.value = password;
+            }
 
-            passwordText.value = password;
         }
+
 
 
     } else if (firstPrompt === false) {
@@ -217,14 +233,12 @@ const writePassword = function writePassword() {
 
         alert("Exiting");
     }
-
-
 }
 
 
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
