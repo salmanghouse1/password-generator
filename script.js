@@ -47,93 +47,96 @@ var generateBtn = document.querySelector("#generate");
 
 var determinePassword = function determinePasswordFunction(lengthOfPasswordPrompt) {
 
-
     // 
     let numberOfTrues = answers.filter(value => value === "true");
     let numberOfEachCharacterType = lengthOfPasswordPrompt / numberOfTrues.length;
     let passwordVar = "";
-    let passArray = [];
 
-    if (numberOfEachCharacterType % 2 == 0) {
-        if (answers[0] === "true") {
 
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += lowerCaseArray[randomNumber(0, 25)];
+    if (answers[0] === "true") {
 
-            }
-
-        }
-        if (answers[1] === "true") {
-
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += upperCaseArray[randomNumber(0, 25)];
-            }
-        }
-        if (answers[2] === "true") {
-
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += numbersArray[randomNumber(0, 9)];
-            }
-        }
-        if (answers[3] === "true") {
-
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += specialCharactersArray[randomNumber(0, 7)];
-            }
+        for (i = 0; i < 2; i++) {
+            passwordVar += lowerCaseArray[randomNumber(0, 25)];
+            console.log(i);
         }
 
-        while (passwordVar.length < lengthOfPasswordPrompt) {
-            alert("special character added to even it out");
-            passwordVar += specialCharactersArray[randomNumber(0, 9)];
-
-        }
-        while (passwordVar.length > lengthOfPasswordPrompt) {
-            alert("removed character to even it out");
-            passwordVar = passwordVar.slice(0, -1);
-
-        }
-    } else {
-        if (answers[0] === "true") {
-
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += lowerCaseArray[randomNumber(0, 25)];
-
-            }
-
-        }
-        if (answers[1] === "true") {
-
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += upperCaseArray[randomNumber(0, 25)];
-            }
-        }
-        if (answers[2] === "true") {
-
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += numbersArray[randomNumber(0, 9)];
-            }
-        }
-        if (answers[3] === "true") {
-
-            for (i = 0; i < numberOfEachCharacterType; i++) {
-                passwordVar += specialCharactersArray[randomNumber(0, 7)];
-            }
-        }
-        while (passwordVar.length < lengthOfPasswordPrompt) {
-            alert("special character added to even it out");
-            passwordVar += specialCharactersArray[randomNumber(0, 9)];
-
-        }
-        while (passwordVar.length > lengthOfPasswordPrompt) {
-            alert("removed character to even it out");
-            passwordVar = passwordVar.slice(0, -1);
-
-        }
     }
+    if (answers[1] === "true") {
+
+        for (i = 0; i < 2; i++) {
+            passwordVar += upperCaseArray[randomNumber(0, 25)];
+
+        }
+
+    }
+    if (answers[2] === "true") {
+        for (i = 0; i < 2; i++) {
+            passwordVar += numbersArray[randomNumber(0, 9)];
+
+        }
+
+    }
+
+    if (answers[3] === "true") {
+
+        for (i = 0; i < 2; i++) {
+            passwordVar += specialCharactersArray[randomNumber(0, 6)];
+
+        }
+
+
+    }
+
+    if (answers[0] === "true") {
+
+
+        while (passwordVar.length < lengthOfPasswordPrompt) {
+            alert("lower character added to even it out");
+            passwordVar += lowerCaseArray[randomNumber(0, 9)];
+
+        }
+    } else if (answers[1] === "true") {
+
+        while (passwordVar.length < lengthOfPasswordPrompt) {
+            alert("upper character added to even it out");
+            passwordVar += upperCaseArray[randomNumber(0, 9)];
+
+        }
+
+    } else if (answers[2] === "true") {
+        while (passwordVar.length < lengthOfPasswordPrompt) {
+            alert("number character added to even it out");
+            passwordVar += numbersArray[randomNumber(0, 9)];
+
+        }
+
+
+    } else if (answers[3] === "true") {
+        while (passwordVar.length < lengthOfPasswordPrompt) {
+            alert("special character added to even it out");
+            passwordVar += specialCharactersArray[randomNumber(0, 9)];
+
+        }
+
+
+    }
+    while (passwordVar.length > lengthOfPasswordPrompt) {
+        alert("last character removed to even it out");
+        passwordVar = passwordVar.slice(0, -1);
+
+    }
+
+
+
     console.log("a-pass = " + passwordVar);
     return passwordVar;
-
 }
+
+
+
+
+
+
 
 
 
