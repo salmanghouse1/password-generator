@@ -31,7 +31,7 @@ var specialCharsPromptsAnswer = "";
 
 var numericalPromptsAnswer = "";
 
-var passwordVar = "";
+var passwordVar = [];
 var lastChar = "";
 alert("Click Generate Password To Generate Password");
 
@@ -46,79 +46,102 @@ var generateBtn = document.querySelector("#generate");
 // Determine password
 
 var determinePassword = function determinePasswordFunction(lengthOfPasswordPrompt) {
-        let numberOfTrues = answers.filter(value => value === "true");
-        let numberOfEachCharacterType = lengthOfPasswordPrompt / numberOfTrues.length;
 
-        if (numberOfEachCharacterType % 2 === 0) {
 
-            if (answers[0] === "true") {
-                console.log("Inside the loop")
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, lowerCaseArray.length - 1);
-                    passwordVar += lowerCaseArray[y];
-                }
-            }
-            if (answers[1] === "true") {
+    // 
+    let numberOfTrues = answers.filter(value => value === "true");
+    let numberOfEachCharacterType = lengthOfPasswordPrompt / numberOfTrues.length;
+    let passwordVar = "";
+    let passArray = [];
 
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, upperCaseArray.length - 1);
-                    passwordVar += upperCaseArray[y];
-                }
+    if (numberOfEachCharacterType % 2 == 0) {
+        if (answers[0] === "true") {
+
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += lowerCaseArray[randomNumber(0, 25)];
 
             }
-            if (answers[3] === "true") {
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, specialCharactersArray.length - 1);
-                    passwordVar += specialCharactersArray[y];
-                }
-            }
-            if (answers[2] === "true") {
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, numbersArray.length - 1);
-                    passwordVar += numbersArray[y];
 
-                }
-            }
-        } else {
+        }
+        if (answers[1] === "true") {
 
-            if (answers[0] === "true") {
-                console.log("Inside the loop2")
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, lowerCaseArray.length - 1);
-                    passwordVar += lowerCaseArray[y];
-                }
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += upperCaseArray[randomNumber(0, 25)];
             }
-            if (answers[1] === "true") {
+        }
+        if (answers[2] === "true") {
 
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, upperCaseArray.length - 1);
-                    passwordVar += upperCaseArray[y];
-                }
-
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += numbersArray[randomNumber(0, 9)];
             }
-            if (answers[3] === "true") {
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, specialCharactersArray.length - 1);
-                    passwordVar += specialCharactersArray[y];
-                }
-            }
-            if (answers[2] === "true") {
-                for (i = 0; i <= numberOfEachCharacterType; i++) {
-                    var y = randomNumber(0, numbersArray.length - 1);
-                    passwordVar += numbersArray[y];
+        }
+        if (answers[3] === "true") {
 
-                }
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += specialCharactersArray[randomNumber(0, 7)];
+            }
+        }
+
+        while (passwordVar.length < lengthOfPasswordPrompt) {
+            alert("special character added to even it out");
+            passwordVar += specialCharactersArray[randomNumber(0, 9)];
+
+        }
+        while (passwordVar.length > lengthOfPasswordPrompt) {
+            alert("removed character to even it out");
+            passwordVar = passwordVar.slice(0, -1);
+
+        }
+    } else {
+        if (answers[0] === "true") {
+
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += lowerCaseArray[randomNumber(0, 25)];
 
             }
-            if (passwordVar.length > lengthOfPasswordPrompt) {
-                for (i = 0; i <= passwordVar.length - lengthOfPasswordPrompt; i++) {
-                    passwordVar = passwordVar.slice(0, -1);
-                }
+
+        }
+        if (answers[1] === "true") {
+
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += upperCaseArray[randomNumber(0, 25)];
             }
-            return passwordVar;
+        }
+        if (answers[2] === "true") {
+
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += numbersArray[randomNumber(0, 9)];
+            }
+        }
+        if (answers[3] === "true") {
+
+            for (i = 0; i < numberOfEachCharacterType; i++) {
+                passwordVar += specialCharactersArray[randomNumber(0, 7)];
+            }
+        }
+        while (passwordVar.length < lengthOfPasswordPrompt) {
+            alert("special character added to even it out");
+            passwordVar += specialCharactersArray[randomNumber(0, 9)];
+
+        }
+        while (passwordVar.length > lengthOfPasswordPrompt) {
+            alert("removed character to even it out");
+            passwordVar = passwordVar.slice(0, -1);
+
         }
     }
-    // Lower case prompt
+    console.log("a-pass = " + passwordVar);
+    return passwordVar;
+
+}
+
+
+
+
+
+
+
+// Lower case prompt
 var lowerCasePrompts = function lowerCasePromptsFunction() {
 
         var lowerCasePromptsAnswer = window.confirm("do you want lowercase letters?");
